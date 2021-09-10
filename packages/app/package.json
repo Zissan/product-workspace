@@ -1,0 +1,9 @@
+{
+  "name": "@product/app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@product/components": "1.0.0"
+  }
+}

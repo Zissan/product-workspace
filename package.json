@@ -1,0 +1,11 @@
+{
+  "name": "product-workspace",
+  "version": "1.0.0",
+  "repository": "https://github.com/Zissan/product-workspace.git",
+  "author": "zissan.chowdhury@yahoo.com",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
