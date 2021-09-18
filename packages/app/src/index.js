@@ -1,3 +1,4 @@
+import "./styles/index.css";
 const app = {
   id: 1,
   name: "market",
