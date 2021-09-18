@@ -2,7 +2,7 @@ const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: process.env.NODE_ENV || "development",
   module: {
     rules: [
       {
@@ -26,5 +26,5 @@ module.exports = {
     compress: true,
     port: 8080,
   },
-  devtool: false,
+  devtool: "source-map",
 };
