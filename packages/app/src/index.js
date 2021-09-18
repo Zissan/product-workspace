@@ -1,13 +1,14 @@
+import React from "react";
+import { render } from "react-dom";
+
 import "@product/styles/scss/index.scss";
 import "./styles/index.css";
-const app = {
-  id: 1,
-  name: "market",
-};
 
-const extendedApp = {
-  ...app,
-  version: "1.0.0",
-};
-
-console.log(app);
+render(
+  <div>
+    <div className="header p-6">
+      <h1>Market</h1>
+    </div>
+  </div>,
+  document.getElementById("root")
+);
