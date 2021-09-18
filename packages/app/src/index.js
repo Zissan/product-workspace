@@ -1,4 +1,4 @@
-import "@product/styles/dist/css/index.css";
+import "@product/styles/scss/index.scss";
 import "./styles/index.css";
 const app = {
   id: 1,
