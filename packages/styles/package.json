@@ -1,0 +1,8 @@
+{
+  "name": "@product/styles",
+  "version": "1.0.0",
+  "description": "Style library",
+  "style": "dist/css/index.css",
+  "author": "zissan.chowdhury@yahoo.com",
+  "license": "MIT"
+}
