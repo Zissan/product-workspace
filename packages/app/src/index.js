@@ -1,6 +1,11 @@
 const app = {
   id: 1,
-  name: "product",
+  name: "market",
+};
+
+const extendedApp = {
+  ...app,
+  version: "1.0.0",
 };
 
 console.log(app);
