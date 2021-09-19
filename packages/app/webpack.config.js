@@ -1,5 +1,11 @@
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const purgecssPlugin = require("purgecss-webpack-plugin");
 const path = require("path");
+const glob = require("glob");
+
+const PATHS = {
+  src: path.join(__dirname, "src"),
+};
 
 module.exports = {
   mode: process.env.NODE_ENV || "development",
@@ -14,16 +20,17 @@ module.exports = {
       },
       {
         test: /\.(sc|c)ss$/i,
-        use: [
-          miniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
-  plugins: [new miniCssExtractPlugin()],
+  plugins: [
+    new miniCssExtractPlugin(),
+    new purgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+      safelist: ["html", "body"],
+    }),
+  ],
   devServer: {
     static: {
       directory: path.join(__dirname, "dist"),
