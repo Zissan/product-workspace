@@ -15,11 +15,19 @@
     "@babel/preset-react": "^7.14.5",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.2",
+    "husky": "^7.0.2",
     "mini-css-extract-plugin": "^2.3.0",
+    "prettier": "2.4.1",
     "purgecss-webpack-plugin": "^4.0.3",
     "sass": "^1.41.1",
     "sass-loader": "^12.1.0",
@@ -34,6 +42,13 @@
     "watch": "webpack --watch",
     "build": "cross-env NODE_ENV=production webpack",
     "build:dev": "webpack",
-    "typescript:init": "tsc --init"
+    "typescript:init": "tsc --init",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "lint": "eslint . --ext .ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier-format && npm run lint"
+    }
   }
 }
