@@ -12,6 +12,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader",
+      },
+      {
         test: /\.js$/i,
         exclude: /node_modules/,
         use: {
@@ -23,6 +27,9 @@ module.exports = {
         use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   plugins: [
     new miniCssExtractPlugin(),
