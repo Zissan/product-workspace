@@ -12,6 +12,7 @@ const PATHS = {
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
   output: {
+    path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'images/[hash][ext][query]'
   },
   module: {
