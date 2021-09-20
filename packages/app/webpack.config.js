@@ -9,11 +9,14 @@ const PATHS = {
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
+  output: {
+    assetModuleFilename: 'images/[hash][ext][query]'
+  },
   module: {
     rules: [
       {
         test: /\.(png|jpe?g|gif|svg)/i,
-        type: 'asset'
+        type: 'asset' // 'asset' | 'asset/inline' | 'asset/resource'
       },
       {
         test: /\.tsx?$/,
@@ -28,7 +31,11 @@ module.exports = {
       },
       {
         test: /\.(sc|c)ss$/i,
-        use: [miniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [
+          { loader: miniCssExtractPlugin.loader, options: { publicPath: '' } }, // for image url in css/scss
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
