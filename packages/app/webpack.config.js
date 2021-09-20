@@ -1,3 +1,4 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const purgecssPlugin = require('purgecss-webpack-plugin');
@@ -44,6 +45,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new htmlWebpackPlugin({ template: './public/index.html' }),
     new miniCssExtractPlugin(),
     new purgecssPlugin({
