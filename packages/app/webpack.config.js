@@ -1,3 +1,4 @@
+const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const purgecssPlugin = require('purgecss-webpack-plugin');
 const path = require('path');
@@ -43,6 +44,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   plugins: [
+    new htmlWebpackPlugin({ template: './public/index.html' }),
     new miniCssExtractPlugin(),
     new purgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
