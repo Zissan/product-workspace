@@ -22,11 +22,7 @@ module.exports = {
         type: 'asset' // 'asset' | 'asset/inline' | 'asset/resource'
       },
       {
-        test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
-      },
-      {
-        test: /\.js$/i,
+        test: /\.(jsx?|tsx?)$/i,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
